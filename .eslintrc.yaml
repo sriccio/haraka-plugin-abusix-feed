@@ -1,25 +1,28 @@
 env:
-  node: true
   es6: true
-  mocha: true
+  node: true
   es2020: true
 
 plugins:
   - haraka
-
-extends:
-  - eslint:recommended
-  - plugin:haraka/recommended
-
-rules:
-  indent: [2, 2, {"SwitchCase": 1}]
+  - prettier
 
 root: true
 
+rules:
+  semi-style: [ error, last ]
+  prefer-template: "warn"
+  no-unneeded-ternary: 1
+
+
+extends: ["eslint:recommended", "plugin:haraka/recommended", "plugin:prettier/recommended"]
+
 globals:
+  server: true
   OK: true
   CONT: true
   DENY: true
   DENYSOFT: true
   DENYDISCONNECT: true
   DENYSOFTDISCONNECT: true
+  NEXT_HOOK: true

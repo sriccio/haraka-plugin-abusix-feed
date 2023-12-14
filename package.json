@@ -1,33 +1,37 @@
 {
   "name": "haraka-plugin-abusix-feed",
-  "version": "1.0.5",
-  "description": "Haraka plugin that...CHANGE THIS",
+  "version": "1.0.0",
+  "description": "Haraka plugin to feed transaction data to Abusix",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint *.js test",
-    "lintfix": "npx eslint --fix *.js test",
+    "lint": "npx eslint *.js test/*.js",
+    "lintfix": "npx eslint --fix *.js test/*.js",
     "versions": "npx dependency-version-checker check",
     "test": "npx mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haraka/haraka-plugin-abusix-feed.git"
+    "url": "git+https://github.com/sriccio/haraka-plugin-abusix-feed.git"
   },
   "keywords": [
     "haraka",
     "plugin",
     "abusix-feed"
   ],
-  "author": "Welcome Member <happy-haraka-hacker@example.com>",
+  "author": "Sébastien Riccio <sriccio@swisscenter.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haraka/haraka-plugin-abusix-feed/issues"
+    "url": "https://github.com/sriccio/haraka-plugin-abusix-feed/issues"
   },
-  "homepage": "https://github.com/haraka/haraka-plugin-abusix-feed#readme",
+  "homepage": "https://github.com/sriccio/haraka-plugin-abusix-feed#readme",
   "devDependencies": {
     "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-haraka": "*",
+    "eslint-plugin-prettier": "^5.0.1",
     "haraka-test-fixtures": "*",
-    "mocha": "^10.2.0"
+    "mocha": "10",
+    "node-gyp": "^10.0.1",
+    "prettier": "3.1.0"
   }
 }

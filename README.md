@@ -1,53 +1,21 @@
 [![CI Test Status][ci-img]][ci-url]
 [![Code Climate][clim-img]][clim-url]
-
 [![NPM][npm-img]][npm-url]
 
 # haraka-plugin-abusix-feed
 
-Clone me, to create a new Haraka plugin!
+This plugin will send required mail transaction data to an Abusix data channel to help improve accuracy of Abusix Mail Intelligence.
 
-# Template Instructions
+More information can be found [here](https://abusix.helpkit.so/data-channels/5q9CV1FJbGR3vWZqVAYrqa/provide-mta-transaction-data-to-abusix/3fB8GA5rvc6zfuwberK43n) and [here](https://abusix.helpkit.so/data-channels/5q9CV1FJbGR3vWZqVAYrqa/submitting-mta-transaction-feeds-via-udp-to-data-channels/2xce2GDc52am5Ms168Y1Dv)
 
-These instructions will not self-destruct after use. Use and destroy.
+## Requirements
 
-See also, [How to Write a Plugin](https://github.com/haraka/Haraka/wiki/Write-a-Plugin) and [Plugins.md](https://github.com/haraka/Haraka/blob/master/docs/Plugins.md) for additional plugin writing information.
+In order to successfully use this plugin, you will need:
 
-## Create a new repo for your plugin
+- A working Haraka instance (obviously)
+- An Abusix data channel feed-id and it's corresponding key
 
-Haraka plugins are named like `haraka-plugin-something`. All the namespace after `haraka-plugin-` is yours for the taking. Please check the [Plugins](https://github.com/haraka/Haraka/blob/master/Plugins.md) page and a Google search to see what plugins already exist.
-
-Once you've settled on a name, create the GitHub repo. On the repo's main page, click the _Clone or download_ button and copy the URL. Then paste that URL into a local ENV variable with a command like this:
-
-```sh
-export MY_GITHUB_ORG=haraka
-export MY_PLUGIN_NAME=haraka-plugin-SOMETHING
-```
-
-Clone and rename the abusix-feed repo:
-
-```sh
-git clone git@github.com:haraka/haraka-plugin-abusix-feed.git
-mv haraka-plugin-abusix-feed $MY_PLUGIN_NAME
-cd $MY_PLUGIN_NAME
-git remote rm origin
-git remote add origin "git@github.com:$MY_GITHUB_ORG/$MY_PLUGIN_NAME.git"
-```
-
-Now you'll have a local git repo to begin authoring your plugin
-
-## rename boilerplate
-
-Replaces all uses of the word `abusix-feed` with your plugin's name.
-
-./redress.sh [something]
-
-You'll then be prompted to update package.json and then force push this repo onto the GitHub repo you've created earlier.
-
-
-# Add your content here
-
-## INSTALL
+## Installation
 
 ```sh
 cd /path/to/local/haraka
@@ -56,22 +24,31 @@ echo "abusix-feed" >> config/plugins
 service haraka restart
 ```
 
-### Configuration
+## Configuration
 
-If the default configuration is not sufficient, copy the config file from the distribution into your haraka config dir and then modify it:
+Copy the sample config file from the distribution into your haraka config dir and then modify them:
 
 ```sh
-cp node_modules/haraka-plugin-abusix-feed/config/abusix-feed.ini config/abusix-feed.ini
-$EDITOR config/abusix-feed.ini
+cp node_modules/haraka-plugin-abusix-feed/config/abusix-feed.ini config/
 ```
 
-## USAGE
+Set your feed name and key as provided by the Abusix data channel creation wizard
 
+```ini
+[feed]
+name=txnXXX
+key=SetYouRFeeDKeeYHeRe
+dest=smtp-rttf.abusix.com:12211
+```
+
+# Author and credits
+
+Written by Sébastien Riccio. Some code stolen from the [Abusix Postfix Policy Daemon](https://gitlab.com/abusix-public/abusix_ppd) 
 
 <!-- leave these buried at the bottom of the document -->
-[ci-img]: https://github.com/haraka/haraka-plugin-abusix-feed/actions/workflows/ci.yml/badge.svg
-[ci-url]: https://github.com/haraka/haraka-plugin-abusix-feed/actions/workflows/ci.yml
-[clim-img]: https://codeclimate.com/github/haraka/haraka-plugin-abusix-feed/badges/gpa.svg
-[clim-url]: https://codeclimate.com/github/haraka/haraka-plugin-abusix-feed
+[ci-img]: https://github.com/sriccio/haraka-plugin-abusix-feed/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/sriccio/haraka-plugin-abusix-feed/actions/workflows/ci.yml
+[clim-img]: https://codeclimate.com/github/sriccio/haraka-plugin-abusix-feed/badges/gpa.svg
+[clim-url]: https://codeclimate.com/github/sriccio/haraka-plugin-abusix-feed
 [npm-img]: https://nodei.co/npm/haraka-plugin-abusix-feed.png
 [npm-url]: https://www.npmjs.com/package/haraka-plugin-abusix-feed
