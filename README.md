@@ -3,7 +3,7 @@
 
 [![NPM][npm-img]][npm-url]
 
-# haraka-plugin-template
+# haraka-plugin-abusix-feed
 
 Clone me, to create a new Haraka plugin!
 
@@ -24,11 +24,11 @@ export MY_GITHUB_ORG=haraka
 export MY_PLUGIN_NAME=haraka-plugin-SOMETHING
 ```
 
-Clone and rename the template repo:
+Clone and rename the abusix-feed repo:
 
 ```sh
-git clone git@github.com:haraka/haraka-plugin-template.git
-mv haraka-plugin-template $MY_PLUGIN_NAME
+git clone git@github.com:haraka/haraka-plugin-abusix-feed.git
+mv haraka-plugin-abusix-feed $MY_PLUGIN_NAME
 cd $MY_PLUGIN_NAME
 git remote rm origin
 git remote add origin "git@github.com:$MY_GITHUB_ORG/$MY_PLUGIN_NAME.git"
@@ -38,7 +38,7 @@ Now you'll have a local git repo to begin authoring your plugin
 
 ## rename boilerplate
 
-Replaces all uses of the word `template` with your plugin's name.
+Replaces all uses of the word `abusix-feed` with your plugin's name.
 
 ./redress.sh [something]
 
@@ -51,8 +51,8 @@ You'll then be prompted to update package.json and then force push this repo ont
 
 ```sh
 cd /path/to/local/haraka
-npm install haraka-plugin-template
-echo "template" >> config/plugins
+npm install haraka-plugin-abusix-feed
+echo "abusix-feed" >> config/plugins
 service haraka restart
 ```
 
@@ -61,17 +61,17 @@ service haraka restart
 If the default configuration is not sufficient, copy the config file from the distribution into your haraka config dir and then modify it:
 
 ```sh
-cp node_modules/haraka-plugin-template/config/template.ini config/template.ini
-$EDITOR config/template.ini
+cp node_modules/haraka-plugin-abusix-feed/config/abusix-feed.ini config/abusix-feed.ini
+$EDITOR config/abusix-feed.ini
 ```
 
 ## USAGE
 
 
 <!-- leave these buried at the bottom of the document -->
-[ci-img]: https://github.com/haraka/haraka-plugin-template/actions/workflows/ci.yml/badge.svg
-[ci-url]: https://github.com/haraka/haraka-plugin-template/actions/workflows/ci.yml
-[clim-img]: https://codeclimate.com/github/haraka/haraka-plugin-template/badges/gpa.svg
-[clim-url]: https://codeclimate.com/github/haraka/haraka-plugin-template
-[npm-img]: https://nodei.co/npm/haraka-plugin-template.png
-[npm-url]: https://www.npmjs.com/package/haraka-plugin-template
+[ci-img]: https://github.com/haraka/haraka-plugin-abusix-feed/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/haraka/haraka-plugin-abusix-feed/actions/workflows/ci.yml
+[clim-img]: https://codeclimate.com/github/haraka/haraka-plugin-abusix-feed/badges/gpa.svg
+[clim-url]: https://codeclimate.com/github/haraka/haraka-plugin-abusix-feed
+[npm-img]: https://nodei.co/npm/haraka-plugin-abusix-feed.png
+[npm-url]: https://www.npmjs.com/package/haraka-plugin-abusix-feed
